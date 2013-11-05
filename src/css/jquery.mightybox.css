@@ -1,0 +1,26 @@
+.mightybox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.mb-content {
+  background-color: #fff;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.mb-close {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #fff url('../img/close.png') 50% 50% no-repeat;
+  width: 48px;
+  height: 48px;
+}

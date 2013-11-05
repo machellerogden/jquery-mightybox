@@ -22,6 +22,7 @@
   
   <button class="openA">Open Example A</button>
   <button class="openB">Open Example B</button>
+  <button class="openC">Open Example C</button>
 
   <!-- hidden content -->
   <article style="display:none;">
@@ -42,13 +43,19 @@
 
       exampleA = $.mightybox({
         type: 'html',
-        data: 'test'
+        data: '<strong>Lorem ipsum dolor sit amet</strong>'
       });
 
       exampleB = $('article').mightybox();
 
+      exampleC = $.mightybox({
+        type: 'ajax',
+        data: 'http://localhost/test'
+      });
+
       $('body').on('click', '.openA', exampleA.open);
       $('body').on('click', '.openB', exampleB.open);
+      $('body').on('click', '.openC', exampleC.open);
 
     });
   </script>

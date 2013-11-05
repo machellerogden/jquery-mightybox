@@ -12,7 +12,7 @@
 
     options = $.extend(defaults, userOptions);
 
-    data = ((this == undefined) || (this.fn && this.fn.jquery)) ? options.data : $(this).detach().show().html();
+    data = ((this == undefined) || (this.fn && this.fn.jquery)) ? options.data : $(this).html();
 
     // create elements
     $mightybox = $('<div/>').attr('class', 'mightybox');

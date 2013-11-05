@@ -1,7 +1,7 @@
 {
   "name": "jquery-mightybox",
   "version": "0.1.0",
-  "description": "A sweet little jQuery plugin for creating lightboxes.",
+  "description": "A small but mighty jQuery lightbox plugin.",
   "repository": {
     "type": "git",
     "url": "https://github.com/machellerogden/jquery-mightybox.git"

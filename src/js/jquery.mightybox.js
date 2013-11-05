@@ -3,7 +3,7 @@
   var mightybox;
 
   mightybox = function (userOptions) {
-    var defaults, options, data, $mightybox, $content, $close;
+    var defaults, options, data, $mightybox, $content, $close, instance;
 
     defaults = {
       type: 'html', // eventually should support: html, ajax, photo, video, iframe
@@ -33,7 +33,7 @@
           $content.html(response);
         });
         break;
-    };
+    }
 
     // define instance
     instance = {

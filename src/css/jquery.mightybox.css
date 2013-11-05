@@ -6,20 +6,23 @@
   height: 100%;
   text-align: center;
   background-color: rgba(0,0,0,0.5);
+  overflow-y: auto;
 }
 
 .mb-content {
   background-color: #fff;
   max-width: 720px;
   width: 100%;
-  margin: 0 auto;
-  overflow: auto;
+  min-height: 300px;
+  margin: 36px auto;
+  padding: 20px 40px;
+  text-align: left;
 }
 
 .mb-close {
   position: fixed;
   top: 0;
-  right: 0;
+  right: 36px;
   background: #fff url('../img/close.png') 50% 50% no-repeat;
   width: 48px;
   height: 48px;

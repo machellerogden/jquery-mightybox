@@ -15,7 +15,7 @@
   isOpen = false;
 
   mightybox = function (userOptions) {
-    var defaults, options, data, $mightybox, $content, $close, instance;
+    var defaults, options, data, $mightybox, $notmighty, $content, $close, instance;
 
     // defaults
     defaults = {

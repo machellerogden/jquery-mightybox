@@ -1,4 +1,4 @@
-.mightybox {
+.mb-mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +13,7 @@
   background-color: #fff;
   max-width: 720px;
   width: 100%;
-  margin: 36px auto;
+  margin: 0 auto;
   padding: 20px 40px;
   text-align: left;
 }
@@ -21,7 +21,7 @@
 .mb-close {
   position: fixed;
   top: 0;
-  right: 36px;
+  right: 0;
   background: #fff url('../img/close.png') 50% 50% no-repeat;
   width: 48px;
   height: 48px;

@@ -1,11 +1,21 @@
 (function ($) {
 
-  var mightybox, isOpen;
+  var mightybox, scrollbarWidth, isOpen;
+
+  scrollbarWidth = (function () {
+    var $outer, widthNoScroll, $inner, widthWithScroll;
+    $outer = $('<div/>').css({'visibility':'hidden','overflow':'scroll'}).width('100px').appendTo('body');
+    $inner = $('<div/>').width('100%').appendTo($outer);
+    widthNoScroll = $outer.width();
+    widthWithScroll = $inner.width();
+    $outer.remove();
+    return (widthNoScroll - widthWithScroll) + 'px';
+  })();
 
   isOpen = false;
 
   mightybox = function (userOptions) {
-    var defaults, options, data, $mightybox, $content, $close, instance;
+    var defaults, options, data, $mightybox, $mask, $content, $close, instance;
 
     // defaults
     defaults = {
@@ -21,12 +31,15 @@
 
     // create elements
     $mightybox = $('<div/>').attr('class', 'mightybox');
+    $mask = $('<div/>').attr('class', 'mb-mask');
     $content = $('<div/>').attr('class', 'mb-content');
     $close = $('<div/>').attr('class', 'mb-close');
 
+
     // create structure
-    $content.appendTo($mightybox);
-    $close.appendTo($mightybox);
+    $content.appendTo($mask);
+    $close.appendTo($mask);
+    $mask.appendTo($mightybox);
 
     // populate content
     switch (options.type) {
@@ -41,6 +54,7 @@
     }
 
 
+
     // define instance
     instance = {
       open: function () {
@@ -50,6 +64,7 @@
           isOpen = true;
         }
         $mightybox.appendTo('body');
+        if ($content.height() > $(window).height()) $close.css('right', scrollbarWidth);
       },
       close: function () {
         if (isOpen) {

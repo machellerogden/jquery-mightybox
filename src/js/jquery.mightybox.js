@@ -20,7 +20,8 @@
     // defaults
     defaults = {
       type: 'html', // eventually should support: html, ajax, photo, video, iframe
-      data: ''
+      data: '',
+      maskBlur: 2
     };
 
     // extend defaults with user options
@@ -59,7 +60,9 @@
         } else {
           isOpen = true;
         }
-        $notmighty.css('-webkit-filter','blur(2px)');
+        if ((options.maskBlur != undefined) && (options.maskBlur > 0)) {
+          $notmighty.css('-webkit-filter','blur(' + options.maskBlur + 'px)');
+        }
         $mightybox.appendTo('body');
         if ($content.height() > $(window).height()) $close.css('right', scrollbarWidth + 'px');
       },

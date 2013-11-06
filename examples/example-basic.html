@@ -90,7 +90,8 @@
 
         exampleC = $.mightybox({
           type: 'ajax',
-          data: 'http://localhost:3000/test'
+          data: 'http://localhost:3000/test',
+          maskBlur: 0
         });
 
         $('body').on('click', '.openA', exampleA.open);

@@ -15,7 +15,7 @@
   isOpen = false;
 
   mightybox = function (userOptions) {
-    var defaults, options, data, $mightybox, $mask, $content, $close, instance;
+    var defaults, options, data, $mightybox, $content, $close, instance;
 
     // defaults
     defaults = {
@@ -31,15 +31,12 @@
 
     // create elements
     $mightybox = $('<div/>').attr('class', 'mightybox');
-    $mask = $('<div/>').attr('class', 'mb-mask');
     $content = $('<div/>').attr('class', 'mb-content');
     $close = $('<div/>').attr('class', 'mb-close');
 
-
     // create structure
-    $content.appendTo($mask);
-    $close.appendTo($mask);
-    $mask.appendTo($mightybox);
+    $content.appendTo($mightybox);
+    $close.appendTo($mightybox);
 
     // populate content
     switch (options.type) {
@@ -52,8 +49,6 @@
         });
         break;
     }
-
-
 
     // define instance
     instance = {

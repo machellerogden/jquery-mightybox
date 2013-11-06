@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     },
     uglify : {
       options : {
-        mangle : false,
+        mangle : true,
         banner : '/**\n * <%= pkg.name %> - <%= pkg.description %>\n * \n * @version <%= pkg.version %>\n * @author <%= pkg.author %>\n * @license <%= pkg.license %>\n */\n\n'
       },
       my_target : {

@@ -33,6 +33,7 @@
     $mightybox = $('<div/>').attr('class', 'mightybox');
     $content = $('<div/>').attr('class', 'mb-content');
     $close = $('<div/>').attr('class', 'mb-close');
+    $notmighty = $('body').find('*').not('.mightybox');
 
     // create structure
     $content.appendTo($mightybox);
@@ -58,11 +59,13 @@
         } else {
           isOpen = true;
         }
+        $notmighty.css('-webkit-filter','blur(2px)');
         $mightybox.appendTo('body');
         if ($content.height() > $(window).height()) $close.css('right', scrollbarWidth + 'px');
       },
       close: function () {
         if (isOpen) {
+          $notmighty.css('-webkit-filter','');
           $mightybox.detach();
           isOpen = false;
         }

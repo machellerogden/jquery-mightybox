@@ -1,17 +1,22 @@
 (function ($) {
 
-  var mightybox;
+  var mightybox, isOpen;
+
+  isOpen = false;
 
   mightybox = function (userOptions) {
     var defaults, options, data, $mightybox, $content, $close, instance;
 
+    // defaults
     defaults = {
       type: 'html', // eventually should support: html, ajax, photo, video, iframe
       data: ''
     };
 
+    // extend defaults with user options
     options = $.extend(defaults, userOptions);
 
+    // set data based on whether this is a jquery object or not, if so, set data to inner html of selected element
     data = ((this == undefined) || (this.fn && this.fn.jquery)) ? options.data : $(this).html();
 
     // create elements
@@ -35,13 +40,22 @@
         break;
     }
 
+
     // define instance
     instance = {
       open: function () {
+        if (isOpen) {
+          $('.mightybox').detach();
+        } else {
+          isOpen = true;
+        }
         $mightybox.appendTo('body');
       },
       close: function () {
-        $mightybox.detach();
+        if (isOpen) {
+          $mightybox.detach();
+          isOpen = false;
+        }
       }
     };
 

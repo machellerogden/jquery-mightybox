@@ -31,7 +31,7 @@
 
   <!-- hidden content -->
   <article style="display:none;">
-    <button class="openA">Example A</button>
+    <p><button class="openA">Example A</button></p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed nisi id ligula malesuada condimentum auctor a mauris. Nullam interdum, purus a sagittis dictum, massa lectus vehicula lectus, a adipiscing eros massa quis augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris tincidunt varius est sit amet posuere. Vestibulum rutrum velit euismod massa vulputate semper. Nullam dui nulla, adipiscing et metus sed, commodo dignissim lectus. Curabitur congue mauris non lectus mollis aliquam. Proin quis mi iaculis, rutrum tellus eget, ornare massa. Nulla quis mi dolor.</p>
     <p>Nam aliquam, eros ultrices vestibulum scelerisque, erat ipsum dictum lectus, accumsan porta massa tellus sit amet nulla. Nunc ut lacus nec augue malesuada sollicitudin. Sed ut porta ligula. Morbi at dolor at nunc tempor imperdiet. Nunc lacinia aliquet ipsum non tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin orci dictum quam cursus porttitor. Sed ac massa in massa sollicitudin laoreet. Sed mauris nibh, pellentesque dignissim pellentesque vitae, venenatis lobortis tellus.</p>
     <p>Integer luctus, ante a ultricies luctus, sem risus consequat justo, non tincidunt mi massa vel arcu. Cras vitae vulputate ligula, at mollis dui. In nec dui nisl. Ut feugiat urna et felis laoreet, id sodales lacus rhoncus. Proin at erat a nisl malesuada scelerisque non sit amet quam. Nullam ac placerat elit, sit amet suscipit tortor. Curabitur sed adipiscing nulla. Cras eget neque at mauris ornare fermentum. Praesent hendrerit tempus magna, quis tincidunt sapien ultrices nec. Nam placerat eros sit amet odio venenatis convallis consequat et enim. Fusce iaculis mauris et dictum commodo. Vivamus a ultrices erat, sed feugiat magna.</p>
@@ -69,7 +69,10 @@
 
       exampleA = $.mightybox({
         type: 'html',
-        data: '<strong>Lorem ipsum dolor sit amet</strong>'
+        data: [
+          '<p><button class="openB">Example B</button></p>',
+          '<p><strong>Nam aliquam, eros ultrices vestibulum scelerisque, erat ipsum dictum lectus, accumsan porta massa tellus sit amet nulla.</strong> Nunc ut lacus nec augue malesuada sollicitudin. Sed ut porta ligula. Morbi at dolor at nunc tempor imperdiet. Nunc lacinia aliquet ipsum non tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin orci dictum quam cursus porttitor. Sed ac massa in massa sollicitudin laoreet. Sed mauris nibh, pellentesque dignissim pellentesque vitae, venenatis lobortis tellus.</p>'
+        ].join('')
       });
 
       exampleB = $('article').mightybox();

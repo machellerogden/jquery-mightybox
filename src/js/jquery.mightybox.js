@@ -9,7 +9,7 @@
     widthNoScroll = $outer.width();
     widthWithScroll = $inner.width();
     $outer.remove();
-    return (widthNoScroll - widthWithScroll) + 'px';
+    return widthNoScroll - widthWithScroll;
   })();
 
   isOpen = false;
@@ -64,7 +64,7 @@
           isOpen = true;
         }
         $mightybox.appendTo('body');
-        if ($content.height() > $(window).height()) $close.css('right', scrollbarWidth);
+        if ($content.height() > $(window).height()) $close.css('right', scrollbarWidth + 'px');
       },
       close: function () {
         if (isOpen) {
